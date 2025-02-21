@@ -1,7 +1,7 @@
-# **2025-OBJPROG-LAB016**
+# **2025-OBJPROG-LAB020**
 Week 05 - Methods in Java
 
-Laboratory # 16 - Guided Coding Exercise 5: Method Overloading
+Laboratory # 20 - Group Activity # 01 - Problem 04: Simple Menu-Driven Program with Function-Based
 
 ## **Instructions**
 
@@ -77,102 +77,93 @@ Only perform this if this is the first time you will setup your Git Environment
 
 ### **Step 3: Complete the Assignment**
 
-**Laboratory # 16 - Guided Coding Exercise 5: Method Overloading**
+**Laboratory # 20 - Group Activity # 01 - Problem 04: Simple Menu-Driven Program with Function-Based**
 
    **Objective:**
-   - Define and use method overloading to write cleaner and more modular code.
-   - Understand that methods with the same name can coexist if they have different parameter lists.
+   - Develop a menu-driven Java program that provides options to greet the user, check if a number is even or odd, or exit the program.
+   - Demonstrate the use of methods to organize the program and improve modularity.
 
    **File Naming Convention:**
-   - `MethodOverloading.java`
+   - `MenuDrivenProgram.java`
 
    **Desired Output:**
    ```txt
-   Integer value: 10
-   Double value: 3.14
-   String value: Hello!
+   Menu:
+   1. Greet User
+   2. Check Even/Odd
+   3. Exit
+   Enter your choice (1-3): 1
+   Hello! Welcome!
+   
+   Menu:
+   1. Greet User
+   2. Check Even/Odd
+   3. Exit
+   Enter your choice (1-3): 2
+   Enter an integer: 33
+   33 is an Odd number.
+   
+   Menu:
+   1. Greet User
+   2. Check Even/Odd
+   3. Exit
+   Enter your choice (1-3): 3
+   Exiting program. Goodbye!
    ```
 
    **Notable Observations (to be discussed after completing the exercise):**
-   - You have defined three methods with the same name (printValue) but with different parameter lists. This is method overloading.
-   - The Java compiler determines which method to call based on the type of the argument you provide.
+   - This activity emphasizes the use of methods to create a modular and well-structured program.
+   - Helper methods can be used to further break down tasks and improve code organization.
 
    **Java Programming Best Practices:**
-   - Use method overloading when you have methods that perform similar tasks but operate on different data types or a different number of inputs.
-   - Ensure that the overloaded methods have distinct parameter lists so the compiler can differentiate between them.
+   - Use meaningful method names that clearly describe their purpose.
+   - Keep your methods concise and focused on a single task.
+   - Add comments to your code to explain the logic and purpose of each method.
+   - Validate user input to prevent unexpected errors.
+   - Use helper methods to improve code organization and readability.
       
-   **Step-by-Step Instructions:**
+   **Method Requirements:**
 
-   1. Setup Class and Main Method
-      - Create a file named `MethodOverloading.java`.
-      - Define the class `MethodOverloading` and the `main` method.
-      ```Java      
-      public class MethodOverloading {
-          public static void main(String[] args) {
-      
-          }
-      }
-      ```
+   1. displayMenu()
+      - Purpose: To display the menu options to the user.
+      - Requirements:
+         - Print the menu options to the console, clearly numbered.
             
-   2. Create the First printValue Method
-      - After the closing brace of main, type public static void printValue(int number) {}
-      - Inside this method, add: System.out.println("Integer value: " + number);
-      ```Java
-      public class MethodOverloading {
-          //... (main method)...
-          public static void printValue(int number) {
-              System.out.println("Integer value: " + number);
-          }
-      }
-      ```
+   2. handleMenuChoice(choice)
+      - Purpose: To execute the corresponding action based on the user's menu choice.
+      - Requirements:
+         - Take the user's choice (an integer) as a parameter.
+         - Use conditional statements (if, else if, else) to determine the action to perform based on the choice:
+            - If the choice is 1, call a helper method (greetUser()) to display a greeting message.
+            - If the choice is 2, call a helper method (checkEvenOrOdd()) to get an integer input from the user and check if it's even or odd.
+            - If the choice is 3, print an exit message and terminate the program.
+            - If the choice is invalid, print an error message.
 
-   3. Create the Second printValue Method
-      - After the first printValue method, type public static void printValue(double number) {}
-      - Inside this method, add: System.out.println("Double value: " + number);
-      ```Java
-      public class MethodOverloading {
-          //... (main and first printValue methods)...
-          public static void printValue(double number) {
-              System.out.println("Double value: " + number);
-          }
-      }
-      ```
+   3. Helper Methods (Optional, but Recommended)
+      - greetUser()
+         - Purpose: To display a greeting message to the user.
+      - checkEvenOrOdd()
+         - Purpose: To get an integer input from the user and check if it's even or odd.
+         - Requirements:
+            - Prompt the user to enter an integer.
+            - Read the user's input.
+            - Check if the number is even or odd using the modulo operator (%).
+            - Print a message indicating whether the number is even or odd.
 
-   4. Create the Third printValue Method
-      - After the second printValue method, type public static void printValue(String text) {}
-      - Inside this method, add: System.out.println("String value: " + text);
-      ```Java
-      public class MethodOverloading {
-          //... (main and other printValue methods)...
-          public static void printValue(String text) {
-              System.out.println("String value: " + text);
-          }
-      }
-      ```
-
-   5. Call the printValue Methods
-      - In main, add these lines:
-         - printValue(10);
-         - printValue(3.14);
-         - printValue("Hello!");
-      ```Java
-      public class MethodOverloading {
-          public static void main(String args) {
-              printValue(10);
-              printValue(3.14);
-              printValue("Hello!");
-          }
-          //... (printValue methods)...
-      }
-      ```
-
-   6. Compile and Run
-       - Save the file as `MethodOverloading.java`.
-       - Compile the code using `javac MethodOverloading.java` in your terminal or command prompt.
-       - Run the compiled code using `java MethodOverloading`.
+   4. Main Program Flow
+      - Use a loop (e.g., while loop) to continuously display the menu and process user choices until the user chooses to exit.
+      - Inside the loop:
+         - Call the displayMenu() method to display the menu.
+         - Get the user's choice.
+         - Call the handleMenuChoice() method to process the choice.
 
    **Conclusion**
-   This exercise demonstrated the concept of method overloading in Java. Method overloading allows you to create multiple methods with the same name, as long as they have different parameter lists. This can make your code more concise, readable, and organized, especially when dealing with similar operations on different data types.
+   By completing this coding challenge, you will gain experience in:
+   - Designing and implementing methods in Java.
+   - Using conditional statements for decision-making.
+   - Creating a menu-driven program.
+   - Handling user input.
+   - Following Java programming best practices for clean and maintainable code.
 
 ### **Step 4: Push Changes to GitHub**
 Once you've completed your changes, follow these steps to upload your work to your GitHub repository.
@@ -196,7 +187,7 @@ Once you've completed your changes, follow these steps to upload your work to yo
    Write a meaningful commit message:
    
    ```bash
-   git commit -m "Submitting OBJPROG Week 05 - Laboratory # 16"
+   git commit -m "Submitting OBJPROG Week 05 - Laboratory # 20"
    ```
    
 4. Push your changes to GitHub:
