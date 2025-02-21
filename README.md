@@ -111,7 +111,7 @@ Only perform this if this is the first time you will setup your Git Environment
    Exiting program. Goodbye!
    ```
 
-   **Notable Observations (to be discussed after completing the exercise):**
+   **Notable Observations:**
    - This activity emphasizes the use of methods to create a modular and well-structured program.
    - Helper methods can be used to further break down tasks and improve code organization.
 
